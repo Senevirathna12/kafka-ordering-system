@@ -1,0 +1,23 @@
+{
+  "name": "bigdata_kafka_ordering_system",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "producer": "node src/producer.js",
+    "consumer": "node src/consumer.js",
+    "dev:producer": "nodemon src/producer.js",
+    "dev:consumer": "nodemon src/consumer.js"
+  }
+,
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "avsc": "^5.7.9",
+    "kafkajs": "^2.2.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
