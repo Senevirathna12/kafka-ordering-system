@@ -1,4 +1,3 @@
-// src/utils/kafka-config.js
 const { Kafka } = require('kafkajs');
 
 // Kafka configuration

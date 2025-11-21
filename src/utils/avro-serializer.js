@@ -1,4 +1,3 @@
-// src/utils/avro-serializer.js
 const avro = require('avsc');
 const fs = require('fs');
 const path = require('path');
@@ -7,11 +6,6 @@ const path = require('path');
 const schemaPath = path.join(__dirname, '../schemas/order.avsc');
 const orderSchema = avro.Type.forSchema(JSON.parse(fs.readFileSync(schemaPath, 'utf8')));
 
-/**
- * Serialize order object to Avro binary format
- * @param {Object} order - Order object with orderId, product, price
- * @returns {Buffer} Serialized Avro buffer
- */
 function serializeOrder(order) {
   try {
     // Validate the order against schema
@@ -28,11 +22,6 @@ function serializeOrder(order) {
   }
 }
 
-/**
- * Deserialize Avro binary to order object
- * @param {Buffer} buffer - Avro serialized buffer
- * @returns {Object} Order object
- */
 function deserializeOrder(buffer) {
   try {
     const order = orderSchema.fromBuffer(buffer);
@@ -43,11 +32,7 @@ function deserializeOrder(buffer) {
   }
 }
 
-/**
- * Create a sample order for testing
- * @param {string} orderId 
- * @returns {Object} Sample order
- */
+// Create a sample order for testing
 function createSampleOrder(orderId) {
   const products = ['Item1', 'Item2', 'Item3', 'Item4', 'Item5'];
   const randomProduct = products[Math.floor(Math.random() * products.length)];
